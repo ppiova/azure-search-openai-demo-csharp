@@ -50,7 +50,7 @@ description: A csharp sample app that chats with your data using OpenAI and AI S
 - [Resources](#resources)
 - [FAQ](#faq)
 
-# ChatGPT + Enterprise data with Azure OpenAI and Cognitive Search (.NET)
+# ChatGPT + Enterprise data with Azure OpenAI and Azure AI Search (.NET)
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Azure-Samples/azure-search-openai-demo-csharp/dotnet-build.yml?label=BUILD%20%26%20TEST&logo=github&style=for-the-badge)
 [![Open in GitHub - Codespaces](https://img.shields.io/static/v1?style=for-the-badge&label=GitHub+Codespaces&message=Open&color=brightgreen&logo=github)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=624102171&machine=standardLinux32gb&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestUs2)
@@ -75,7 +75,7 @@ We want to hear from you! Are you interested in building or currently building i
 
 - Voice Chat, Chat and Q&A interfaces
 - Explores various options to help users evaluate the trustworthiness of responses with citations, tracking of source content, etc.
-- Shows possible approaches for data preparation, prompt construction, and orchestration of interaction between model (ChatGPT) and retriever (Cognitive Search)
+- Shows possible approaches for data preparation, prompt construction, and orchestration of interaction between model (ChatGPT) and retriever (Azure AI Search)
 - Settings directly in the UX to tweak the behavior and experiment with options
 
 ![Chat screen](docs/chatscreen.png)
@@ -94,23 +94,12 @@ We want to hear from you! Are you interested in building or currently building i
 In order to deploy and run this example, you'll need
 
 - **Azure Account** - If you're new to Azure, get an [Azure account for free](https://aka.ms/free) and you'll get some free Azure credits to get started.
-- **Azure subscription with access enabled for the Azure OpenAI service** - [You can request access](https://aka.ms/oaiapply). You can also visit [the Cognitive Search docs](https://azure.microsoft.com/free/cognitive-search/) to get some free Azure credits to get you started.
+- **Azure subscription with access enabled for the Azure OpenAI service** - [You can request access](https://aka.ms/oaiapply). You can also visit [the Azure AI Search docs](https://azure.microsoft.com/free/cognitive-search/) to get some free Azure credits to get you started.
 - **Azure account permissions** - Your Azure Account must have `Microsoft.Authorization/roleAssignments/write` permissions, such as [User Access Administrator](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) or [Owner](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles#owner).
 
 
 > [!WARNING]<br>
-> By default this sample will create an Azure Container App, and Azure AI Search resource that have a monthly cost, as well as Form Recognizer resource that has cost per document page. You can switch them to free versions of each of them if you want to avoid this cost by changing the parameters file under the infra folder (though there are some limits to consider; for example, you can have up to 1 free Cognitive Search resource per subscription, and the free Form Recognizer resource only analyzes the first 2 pages of each document.)
-
-### Cost estimation
-
-Pricing varies per region and usage, so it isn't possible to predict exact costs for your usage. However, you can try the [Azure pricing calculator](https://azure.microsoft.com/pricing/calculator/) for the resources below:
-
-- [**Azure Container Apps**](https://azure.microsoft.com/pricing/details/container-apps/)
-- [**Azure OpenAI Service**](https://azure.microsoft.com/pricing/details/cognitive-services/openai-service/)
-- [**Azure Form Recognizer**](https://azure.microsoft.com/pricing/details/form-recognizer/)
-- [**Azure AI Search**](https://azure.microsoft.com/pricing/details/search/)
-- [**Azure Blob Storage**](https://azure.microsoft.com/pricing/details/storage/blobs/)
-- [**Azure Monitor**](https://azure.microsoft.com/pricing/details/monitor/)
+> By default this sample will create an Azure Container App, and Azure AI Search resource that have a monthly cost, as well as Form Recognizer resource that has cost per document page. You can switch them to free versions of each of them if you want to avoid this cost by changing the parameters file under the infra folder (though there are some limits to consider; for example, you can have up to 1 free Azure AI Search resource per subscription, and the free Form Recognizer resource only analyzes the first 2 pages of each document.)
 
 ### Project setup
 
@@ -350,9 +339,22 @@ to production. Here are some things to consider:
 * **Networking**: We recommend deploying inside a Virtual Network. If the app is only for internal enterprise use, use a private DNS zone. Also consider using Azure API Management (APIM) for firewalls and other forms of protection. For more details, read [Azure OpenAI Landing Zone reference architecture](https://techcommunity.microsoft.com/t5/azure-architecture-blog/azure-openai-landing-zone-reference-architecture/ba-p/3882102).
 * **Loadtesting**: We recommend running a loadtest for your expected number of users.
 
+## Guidance
+
+### Cost estimation
+
+Pricing varies per region and usage, so it isn't possible to predict exact costs for your usage. However, you can try the [Azure pricing calculator](https://azure.microsoft.com/pricing/calculator/) for the resources below:
+
+- [**Azure Container Apps**](https://azure.microsoft.com/pricing/details/container-apps/)
+- [**Azure OpenAI Service**](https://azure.microsoft.com/pricing/details/cognitive-services/openai-service/)
+- [**Azure Form Recognizer**](https://azure.microsoft.com/pricing/details/form-recognizer/)
+- [**Azure AI Search**](https://azure.microsoft.com/pricing/details/search/)
+- [**Azure Blob Storage**](https://azure.microsoft.com/pricing/details/storage/blobs/)
+- [**Azure Monitor**](https://azure.microsoft.com/pricing/details/monitor/)
+
 ## Resources
 
-- [Revolutionize your Enterprise Data with ChatGPT: Next-gen Apps w/ Azure OpenAI and Cognitive Search](https://aka.ms/entgptsearchblog)
+- [Revolutionize your Enterprise Data with ChatGPT: Next-gen Apps w/ Azure OpenAI and Azure AI Search](https://aka.ms/entgptsearchblog)
 - [Azure AI Search](https://learn.microsoft.com/azure/search/search-what-is-azure-search)
 - [Azure OpenAI Service](https://learn.microsoft.com/azure/cognitive-services/openai/overview)
 - [`Azure.AI.OpenAI` NuGet package](https://www.nuget.org/packages/Azure.AI.OpenAI)
